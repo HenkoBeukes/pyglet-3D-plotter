@@ -13,17 +13,12 @@
 # all copies or substantial portions of the Software.
 
 """
-my pyglet based 3D plotter
-press p to see the info and input page
-use the mouse to move the frame or keys qwerasdf
-can take multiple equations at a time on the same axis
-can also do a scatter plot - import the data from a file called datalist.txt
+can also do a scatter plot - import the data from a file called datalist.txt in res/
 smoother rendering than with pygame
-"""
-"""
+
 Using:
-Python 3.6.6
-Pyglet 1.3.3
+Python 3.6.6+
+Pyglet 1.5
 """
 
 from math import *     # use this in eval(eq)
