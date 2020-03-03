@@ -247,6 +247,8 @@ class TextWindow(pyglet.window.Window):
         self.second_plot = True   # to show the eq of other running plots
         self.color_rotate = [0, 1, 2, 3, 4, 5]
         # self.update_text()
+        self.push_handlers(self.on_close)
+
         self.label1 = pyglet.text.Label(
                             "Henko's Amazing Flying 3D Plotter" ,
                                    font_name='Arial',
@@ -388,7 +390,7 @@ class TextWindow(pyglet.window.Window):
             window.equation.append(')')
         elif symbol == key.ASCIICIRCUM:
             window.equation.append('**')
-y
+
         elif symbol == key.Z:
             window.equation.append('z')
         elif symbol == key.X:
@@ -446,13 +448,6 @@ y
 
     def update(self, dt):
         self.update_text()
-
-    def on_resize(self, width, height):
-        glViewport(0, 0, width, height)
-        glMatrixMode(GL_PROJECTION)
-        glLoadIdentity()
-        glOrtho(0, 1200, 0, 700, -10,10)
-        glMatrixMode(GL_MODELVIEW)
 
 
 def render_equation(equation, color):
